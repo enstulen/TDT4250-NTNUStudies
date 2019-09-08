@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/no.tdt4250.ntnustudies/src" modelPluginID="no.tdt4250.ntnustudies"
+    modelName="Ntnustudies" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>ntnustudies.ecore</foreignModel>
+  <genPackages prefix="Ntnustudies" disposableProviderFactory="true" ecorePackage="ntnustudies.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ntnustudies.ecore#//semesterType">
+      <genEnumLiterals ecoreEnumLiteral="ntnustudies.ecore#//semesterType/fall"/>
+      <genEnumLiterals ecoreEnumLiteral="ntnustudies.ecore#//semesterType/spring"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ntnustudies.ecore#//courseLevel">
+      <genEnumLiterals ecoreEnumLiteral="ntnustudies.ecore#//courseLevel/basic"/>
+      <genEnumLiterals ecoreEnumLiteral="ntnustudies.ecore#//courseLevel/medium"/>
+      <genEnumLiterals ecoreEnumLiteral="ntnustudies.ecore#//courseLevel/high"/>
+    </genEnums>
+    <genClasses ecoreClass="ntnustudies.ecore#//Course">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ntnustudies.ecore#//Course/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ntnustudies.ecore#//Course/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ntnustudies.ecore#//Course/credtis"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ntnustudies.ecore#//Course/programmes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ntnustudies.ecore#//Course/semesters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ntnustudies.ecore#//Course/level"/>
+    </genClasses>
+    <genClasses ecoreClass="ntnustudies.ecore#//Programme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ntnustudies.ecore#//Programme/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ntnustudies.ecore#//Programme/years"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ntnustudies.ecore#//Programme/courses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ntnustudies.ecore#//Programme/specializations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ntnustudies.ecore#//Programme/semesters"/>
+    </genClasses>
+    <genClasses ecoreClass="ntnustudies.ecore#//Specialization">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ntnustudies.ecore#//Specialization/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ntnustudies.ecore#//Specialization/programme"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ntnustudies.ecore#//Specialization/courses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ntnustudies.ecore#//Specialization/requiredSpecialization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ntnustudies.ecore#//Specialization/specializationChoicePointSemester"/>
+    </genClasses>
+    <genClasses ecoreClass="ntnustudies.ecore#//Semester">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ntnustudies.ecore#//Semester/possibleCourses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ntnustudies.ecore#//Semester/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ntnustudies.ecore#//Semester/year"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ntnustudies.ecore#//Semester/programme"/>
+    </genClasses>
+    <genClasses ecoreClass="ntnustudies.ecore#//ChosenSemester">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ntnustudies.ecore#//ChosenSemester/semester"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ntnustudies.ecore#//ChosenSemester/courses"/>
+    </genClasses>
+    <genClasses ecoreClass="ntnustudies.ecore#//StudyPlan">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ntnustudies.ecore#//StudyPlan/programme"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ntnustudies.ecore#//StudyPlan/specializations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ntnustudies.ecore#//StudyPlan/chosenSemesters"/>
+    </genClasses>
+    <genClasses ecoreClass="ntnustudies.ecore#//Department">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ntnustudies.ecore#//Department/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ntnustudies.ecore#//Department/courses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ntnustudies.ecore#//Department/shortName"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

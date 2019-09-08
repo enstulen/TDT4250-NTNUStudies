@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ntnustudies:Programme xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ntnustudies="ntnustudies" xsi:schemaLocation="ntnustudies ../ntnustudies.ecore" name="Datateknologi" years="5">
+  <specializations name="Programvaresystemer" specializationChoicePointSemester="3">
+    <courses href="DepartmentIDI.xmi#//@courses.0"/>
+  </specializations>
+  <specializations name="Programvareutvikling" requiredSpecialization="//@specializations.0" specializationChoicePointSemester="4">
+    <courses href="DepartmentIDI.xmi#//@courses.1"/>
+  </specializations>
+  <semesters year="3">
+    <possibleCourses href="DepartmentIDI.xmi#//@courses.2"/>
+    <possibleCourses href="DepartmentIDI.xmi#//@courses.3"/>
+  </semesters>
+  <semesters type="spring" year="3">
+    <possibleCourses href="DepartmentIDI.xmi#//@courses.0"/>
+  </semesters>
+  <semesters year="4">
+    <possibleCourses href="DepartmentIDI.xmi#//@courses.1"/>
+  </semesters>
+</ntnustudies:Programme>

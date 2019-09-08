@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ntnustudies:Department
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ntnustudies="ntnustudies"
+    xsi:schemaLocation="ntnustudies ../ntnustudies.ecore"
+    name="Institutt for datateknologi og informatikk"
+    shortName="IDI">
+  <courses code="TDT4240"
+      name="Programvarearkitektur"
+      credtis="7.5"
+      level="medium">
+    <programmes
+        href="ProgrammeDatateknologi.xmi#/"/>
+    <semesters>spring</semesters>
+  </courses>
+  <courses code="TDT4250"
+      name="Avansert programvaredesign"
+      credtis="7.5"
+      level="high">
+    <programmes
+        href="ProgrammeDatateknologi.xmi#/"/>
+    <semesters>fall</semesters>
+  </courses>
+  <courses code="TDT4175"
+      name="Informasjonssystemer"
+      credtis="7.5">
+    <programmes
+        href="ProgrammeDatateknologi.xmi#/"/>
+    <semesters>fall</semesters>
+  </courses>
+  <courses code="IT2810"
+      name="Webutvikling"
+      credtis="7.5"
+      level="medium">
+    <programmes
+        href="ProgrammeDatateknologi.xmi#/"/>
+    <semesters>fall</semesters>
+  </courses>
+</ntnustudies:Department>
