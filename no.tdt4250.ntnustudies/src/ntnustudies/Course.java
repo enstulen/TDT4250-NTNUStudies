@@ -17,9 +17,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ntnustudies.Course#getCode <em>Code</em>}</li>
  *   <li>{@link ntnustudies.Course#getName <em>Name</em>}</li>
  *   <li>{@link ntnustudies.Course#getCredtis <em>Credtis</em>}</li>
- *   <li>{@link ntnustudies.Course#getProgrammes <em>Programmes</em>}</li>
  *   <li>{@link ntnustudies.Course#getSemesters <em>Semesters</em>}</li>
  *   <li>{@link ntnustudies.Course#getLevel <em>Level</em>}</li>
+ *   <li>{@link ntnustudies.Course#getType <em>Type</em>}</li>
  * </ul>
  *
  * @see ntnustudies.NtnustudiesPackage#getCourse()
@@ -119,16 +119,29 @@ public interface Course extends EObject {
 	void setLevel(courseLevel value);
 
 	/**
-	 * Returns the value of the '<em><b>Programmes</b></em>' reference list.
-	 * The list contents are of type {@link ntnustudies.Programme}.
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link ntnustudies.courseType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Programmes</em>' reference list.
-	 * @see ntnustudies.NtnustudiesPackage#getCourse_Programmes()
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see ntnustudies.courseType
+	 * @see #setType(courseType)
+	 * @see ntnustudies.NtnustudiesPackage#getCourse_Type()
 	 * @model
 	 * @generated
 	 */
-	EList<Programme> getProgrammes();
+	courseType getType();
+
+	/**
+	 * Sets the value of the '{@link ntnustudies.Course#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see ntnustudies.courseType
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(courseType value);
 
 	/**
 	 * Returns the value of the '<em><b>Semesters</b></em>' attribute list.

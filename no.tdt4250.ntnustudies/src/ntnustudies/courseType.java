@@ -10,109 +10,87 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>course Level</b></em>',
+ * A representation of the literals of the enumeration '<em><b>course Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see ntnustudies.NtnustudiesPackage#getcourseLevel()
+ * @see ntnustudies.NtnustudiesPackage#getcourseType()
  * @model
  * @generated
  */
-public enum courseLevel implements Enumerator {
+public enum courseType implements Enumerator {
 	/**
-	 * The '<em><b>Basic</b></em>' literal object.
+	 * The '<em><b>Mandatory</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #BASIC_VALUE
+	 * @see #MANDATORY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	BASIC(0, "basic", "basic"),
+	MANDATORY(0, "mandatory", "mandatory"),
 
 	/**
-	 * The '<em><b>Medium</b></em>' literal object.
+	 * The '<em><b>Elective</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MEDIUM_VALUE
+	 * @see #ELECTIVE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	MEDIUM(1, "medium", "medium"),
+	ELECTIVE(1, "elective", "elective");
 
 	/**
-	 * The '<em><b>High</b></em>' literal object.
+	 * The '<em><b>Mandatory</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #HIGH_VALUE
+	 * @see #MANDATORY
+	 * @model name="mandatory"
 	 * @generated
 	 * @ordered
 	 */
-	HIGH(2, "high", "high");
+	public static final int MANDATORY_VALUE = 0;
 
 	/**
-	 * The '<em><b>Basic</b></em>' literal value.
+	 * The '<em><b>Elective</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #BASIC
-	 * @model name="basic"
+	 * @see #ELECTIVE
+	 * @model name="elective"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BASIC_VALUE = 0;
+	public static final int ELECTIVE_VALUE = 1;
 
 	/**
-	 * The '<em><b>Medium</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #MEDIUM
-	 * @model name="medium"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MEDIUM_VALUE = 1;
-
-	/**
-	 * The '<em><b>High</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #HIGH
-	 * @model name="high"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int HIGH_VALUE = 2;
-
-	/**
-	 * An array of all the '<em><b>course Level</b></em>' enumerators.
+	 * An array of all the '<em><b>course Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final courseLevel[] VALUES_ARRAY =
-		new courseLevel[] {
-			BASIC,
-			MEDIUM,
-			HIGH,
+	private static final courseType[] VALUES_ARRAY =
+		new courseType[] {
+			MANDATORY,
+			ELECTIVE,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>course Level</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>course Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<courseLevel> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<courseType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>course Level</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>course Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static courseLevel get(String literal) {
+	public static courseType get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			courseLevel result = VALUES_ARRAY[i];
+			courseType result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -121,16 +99,16 @@ public enum courseLevel implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>course Level</b></em>' literal with the specified name.
+	 * Returns the '<em><b>course Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static courseLevel getByName(String name) {
+	public static courseType getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			courseLevel result = VALUES_ARRAY[i];
+			courseType result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -139,18 +117,17 @@ public enum courseLevel implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>course Level</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>course Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static courseLevel get(int value) {
+	public static courseType get(int value) {
 		switch (value) {
-			case BASIC_VALUE: return BASIC;
-			case MEDIUM_VALUE: return MEDIUM;
-			case HIGH_VALUE: return HIGH;
+			case MANDATORY_VALUE: return MANDATORY;
+			case ELECTIVE_VALUE: return ELECTIVE;
 		}
 		return null;
 	}
@@ -182,7 +159,7 @@ public enum courseLevel implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private courseLevel(int value, String name, String literal) {
+	private courseType(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -226,4 +203,4 @@ public enum courseLevel implements Enumerator {
 		return literal;
 	}
 	
-} //courseLevel
+} //courseType

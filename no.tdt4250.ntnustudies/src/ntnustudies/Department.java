@@ -16,8 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link ntnustudies.Department#getName <em>Name</em>}</li>
- *   <li>{@link ntnustudies.Department#getCourses <em>Courses</em>}</li>
  *   <li>{@link ntnustudies.Department#getShortName <em>Short Name</em>}</li>
+ *   <li>{@link ntnustudies.Department#getCourses <em>Courses</em>}</li>
+ *   <li>{@link ntnustudies.Department#getProgrammes <em>Programmes</em>}</li>
  * </ul>
  *
  * @see ntnustudies.NtnustudiesPackage#getDepartment()
@@ -58,6 +59,18 @@ public interface Department extends EObject {
 	 * @generated
 	 */
 	EList<Course> getCourses();
+
+	/**
+	 * Returns the value of the '<em><b>Programmes</b></em>' containment reference list.
+	 * The list contents are of type {@link ntnustudies.Programme}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Programmes</em>' containment reference list.
+	 * @see ntnustudies.NtnustudiesPackage#getDepartment_Programmes()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Programme> getProgrammes();
 
 	/**
 	 * Returns the value of the '<em><b>Short Name</b></em>' attribute.

@@ -96,22 +96,13 @@ public interface NtnustudiesPackage extends EPackage {
 	int COURSE__CREDTIS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Programmes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COURSE__PROGRAMMES = 3;
-
-	/**
 	 * The feature id for the '<em><b>Semesters</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE__SEMESTERS = 4;
+	int COURSE__SEMESTERS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Level</b></em>' attribute.
@@ -120,7 +111,16 @@ public interface NtnustudiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE__LEVEL = 5;
+	int COURSE__LEVEL = 4;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COURSE__TYPE = 5;
 
 	/**
 	 * The number of structural features of the '<em>Course</em>' class.
@@ -169,22 +169,13 @@ public interface NtnustudiesPackage extends EPackage {
 	int PROGRAMME__YEARS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Courses</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME__COURSES = 2;
-
-	/**
 	 * The feature id for the '<em><b>Specializations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME__SPECIALIZATIONS = 3;
+	int PROGRAMME__SPECIALIZATIONS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Semesters</b></em>' containment reference list.
@@ -193,7 +184,7 @@ public interface NtnustudiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME__SEMESTERS = 4;
+	int PROGRAMME__SEMESTERS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Programme</em>' class.
@@ -202,7 +193,7 @@ public interface NtnustudiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_FEATURE_COUNT = 5;
+	int PROGRAMME_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Programme</em>' class.
@@ -472,22 +463,31 @@ public interface NtnustudiesPackage extends EPackage {
 	int DEPARTMENT__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Courses</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPARTMENT__COURSES = 1;
-
-	/**
 	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT__SHORT_NAME = 2;
+	int DEPARTMENT__SHORT_NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Courses</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPARTMENT__COURSES = 2;
+
+	/**
+	 * The feature id for the '<em><b>Programmes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPARTMENT__PROGRAMMES = 3;
 
 	/**
 	 * The number of structural features of the '<em>Department</em>' class.
@@ -496,7 +496,7 @@ public interface NtnustudiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT_FEATURE_COUNT = 3;
+	int DEPARTMENT_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Department</em>' class.
@@ -527,6 +527,17 @@ public interface NtnustudiesPackage extends EPackage {
 	 * @generated
 	 */
 	int COURSE_LEVEL = 8;
+
+
+	/**
+	 * The meta object id for the '{@link ntnustudies.courseType <em>course Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ntnustudies.courseType
+	 * @see ntnustudies.impl.NtnustudiesPackageImpl#getcourseType()
+	 * @generated
+	 */
+	int COURSE_TYPE = 9;
 
 
 	/**
@@ -584,15 +595,15 @@ public interface NtnustudiesPackage extends EPackage {
 	EAttribute getCourse_Level();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ntnustudies.Course#getProgrammes <em>Programmes</em>}'.
+	 * Returns the meta object for the attribute '{@link ntnustudies.Course#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Programmes</em>'.
-	 * @see ntnustudies.Course#getProgrammes()
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see ntnustudies.Course#getType()
 	 * @see #getCourse()
 	 * @generated
 	 */
-	EReference getCourse_Programmes();
+	EAttribute getCourse_Type();
 
 	/**
 	 * Returns the meta object for the attribute list '{@link ntnustudies.Course#getSemesters <em>Semesters</em>}'.
@@ -636,17 +647,6 @@ public interface NtnustudiesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getProgramme_Years();
-
-	/**
-	 * Returns the meta object for the reference list '{@link ntnustudies.Programme#getCourses <em>Courses</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Courses</em>'.
-	 * @see ntnustudies.Programme#getCourses()
-	 * @see #getProgramme()
-	 * @generated
-	 */
-	EReference getProgramme_Courses();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link ntnustudies.Programme#getSpecializations <em>Specializations</em>}'.
@@ -897,6 +897,17 @@ public interface NtnustudiesPackage extends EPackage {
 	EReference getDepartment_Courses();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link ntnustudies.Department#getProgrammes <em>Programmes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Programmes</em>'.
+	 * @see ntnustudies.Department#getProgrammes()
+	 * @see #getDepartment()
+	 * @generated
+	 */
+	EReference getDepartment_Programmes();
+
+	/**
 	 * Returns the meta object for the attribute '{@link ntnustudies.Department#getShortName <em>Short Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -926,6 +937,16 @@ public interface NtnustudiesPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getcourseLevel();
+
+	/**
+	 * Returns the meta object for enum '{@link ntnustudies.courseType <em>course Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>course Type</em>'.
+	 * @see ntnustudies.courseType
+	 * @generated
+	 */
+	EEnum getcourseType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -993,12 +1014,12 @@ public interface NtnustudiesPackage extends EPackage {
 		EAttribute COURSE__LEVEL = eINSTANCE.getCourse_Level();
 
 		/**
-		 * The meta object literal for the '<em><b>Programmes</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COURSE__PROGRAMMES = eINSTANCE.getCourse_Programmes();
+		EAttribute COURSE__TYPE = eINSTANCE.getCourse_Type();
 
 		/**
 		 * The meta object literal for the '<em><b>Semesters</b></em>' attribute list feature.
@@ -1033,14 +1054,6 @@ public interface NtnustudiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROGRAMME__YEARS = eINSTANCE.getProgramme_Years();
-
-		/**
-		 * The meta object literal for the '<em><b>Courses</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROGRAMME__COURSES = eINSTANCE.getProgramme_Courses();
 
 		/**
 		 * The meta object literal for the '<em><b>Specializations</b></em>' containment reference list feature.
@@ -1237,6 +1250,14 @@ public interface NtnustudiesPackage extends EPackage {
 		EReference DEPARTMENT__COURSES = eINSTANCE.getDepartment_Courses();
 
 		/**
+		 * The meta object literal for the '<em><b>Programmes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEPARTMENT__PROGRAMMES = eINSTANCE.getDepartment_Programmes();
+
+		/**
 		 * The meta object literal for the '<em><b>Short Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1263,6 +1284,16 @@ public interface NtnustudiesPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum COURSE_LEVEL = eINSTANCE.getcourseLevel();
+
+		/**
+		 * The meta object literal for the '{@link ntnustudies.courseType <em>course Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ntnustudies.courseType
+		 * @see ntnustudies.impl.NtnustudiesPackageImpl#getcourseType()
+		 * @generated
+		 */
+		EEnum COURSE_TYPE = eINSTANCE.getcourseType();
 
 	}
 

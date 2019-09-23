@@ -8,11 +8,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="credtis" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="programmes" upperBound="-1"
-        eType="#//Programme"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="semesters" upperBound="2"
         eType="#//semesterType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="#//courseLevel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//courseType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Programme">
     <eAnnotations source="http://www.eclipse.org/acceleo/query/1.0">
@@ -24,8 +23,6 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="years" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
-        eType="#//Course"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="specializations" upperBound="-1"
         eType="#//Specialization" containment="true" eOpposite="#//Specialization/programme"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="semesters" upperBound="-1"
@@ -70,17 +67,23 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="semesterType">
     <eLiterals name="fall"/>
-    <eLiterals name="spring"/>
+    <eLiterals name="spring" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Department">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shortName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
         eType="#//Course" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shortName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="programmes" upperBound="-1"
+        eType="#//Programme" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="courseLevel">
     <eLiterals name="basic"/>
-    <eLiterals name="medium"/>
-    <eLiterals name="high"/>
+    <eLiterals name="medium" value="1"/>
+    <eLiterals name="high" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="courseType">
+    <eLiterals name="mandatory"/>
+    <eLiterals name="elective" value="1"/>
   </eClassifiers>
 </ecore:EPackage>

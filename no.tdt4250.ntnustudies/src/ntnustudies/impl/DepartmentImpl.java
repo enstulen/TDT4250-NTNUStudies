@@ -8,6 +8,7 @@ import ntnustudies.Course;
 import ntnustudies.Department;
 import ntnustudies.NtnustudiesPackage;
 
+import ntnustudies.Programme;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -31,8 +32,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link ntnustudies.impl.DepartmentImpl#getName <em>Name</em>}</li>
- *   <li>{@link ntnustudies.impl.DepartmentImpl#getCourses <em>Courses</em>}</li>
  *   <li>{@link ntnustudies.impl.DepartmentImpl#getShortName <em>Short Name</em>}</li>
+ *   <li>{@link ntnustudies.impl.DepartmentImpl#getCourses <em>Courses</em>}</li>
+ *   <li>{@link ntnustudies.impl.DepartmentImpl#getProgrammes <em>Programmes</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,16 +61,6 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCourses() <em>Courses</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCourses()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Course> courses;
-
-	/**
 	 * The default value of the '{@link #getShortName() <em>Short Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -87,6 +79,26 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	 * @ordered
 	 */
 	protected String shortName = SHORT_NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCourses() <em>Courses</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCourses()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Course> courses;
+
+	/**
+	 * The cached value of the '{@link #getProgrammes() <em>Programmes</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProgrammes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Programme> programmes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -145,6 +157,18 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Programme> getProgrammes() {
+		if (programmes == null) {
+			programmes = new EObjectContainmentEList<Programme>(Programme.class, this, NtnustudiesPackage.DEPARTMENT__PROGRAMMES);
+		}
+		return programmes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getShortName() {
 		return shortName;
 	}
@@ -171,6 +195,8 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 		switch (featureID) {
 			case NtnustudiesPackage.DEPARTMENT__COURSES:
 				return ((InternalEList<?>)getCourses()).basicRemove(otherEnd, msgs);
+			case NtnustudiesPackage.DEPARTMENT__PROGRAMMES:
+				return ((InternalEList<?>)getProgrammes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -185,10 +211,12 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 		switch (featureID) {
 			case NtnustudiesPackage.DEPARTMENT__NAME:
 				return getName();
-			case NtnustudiesPackage.DEPARTMENT__COURSES:
-				return getCourses();
 			case NtnustudiesPackage.DEPARTMENT__SHORT_NAME:
 				return getShortName();
+			case NtnustudiesPackage.DEPARTMENT__COURSES:
+				return getCourses();
+			case NtnustudiesPackage.DEPARTMENT__PROGRAMMES:
+				return getProgrammes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -205,12 +233,16 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 			case NtnustudiesPackage.DEPARTMENT__NAME:
 				setName((String)newValue);
 				return;
+			case NtnustudiesPackage.DEPARTMENT__SHORT_NAME:
+				setShortName((String)newValue);
+				return;
 			case NtnustudiesPackage.DEPARTMENT__COURSES:
 				getCourses().clear();
 				getCourses().addAll((Collection<? extends Course>)newValue);
 				return;
-			case NtnustudiesPackage.DEPARTMENT__SHORT_NAME:
-				setShortName((String)newValue);
+			case NtnustudiesPackage.DEPARTMENT__PROGRAMMES:
+				getProgrammes().clear();
+				getProgrammes().addAll((Collection<? extends Programme>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -227,11 +259,14 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 			case NtnustudiesPackage.DEPARTMENT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case NtnustudiesPackage.DEPARTMENT__SHORT_NAME:
+				setShortName(SHORT_NAME_EDEFAULT);
+				return;
 			case NtnustudiesPackage.DEPARTMENT__COURSES:
 				getCourses().clear();
 				return;
-			case NtnustudiesPackage.DEPARTMENT__SHORT_NAME:
-				setShortName(SHORT_NAME_EDEFAULT);
+			case NtnustudiesPackage.DEPARTMENT__PROGRAMMES:
+				getProgrammes().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -247,10 +282,12 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 		switch (featureID) {
 			case NtnustudiesPackage.DEPARTMENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case NtnustudiesPackage.DEPARTMENT__COURSES:
-				return courses != null && !courses.isEmpty();
 			case NtnustudiesPackage.DEPARTMENT__SHORT_NAME:
 				return SHORT_NAME_EDEFAULT == null ? shortName != null : !SHORT_NAME_EDEFAULT.equals(shortName);
+			case NtnustudiesPackage.DEPARTMENT__COURSES:
+				return courses != null && !courses.isEmpty();
+			case NtnustudiesPackage.DEPARTMENT__PROGRAMMES:
+				return programmes != null && !programmes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

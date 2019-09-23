@@ -81,6 +81,8 @@ public class NtnustudiesFactoryImpl extends EFactoryImpl implements NtnustudiesF
 				return createsemesterTypeFromString(eDataType, initialValue);
 			case NtnustudiesPackage.COURSE_LEVEL:
 				return createcourseLevelFromString(eDataType, initialValue);
+			case NtnustudiesPackage.COURSE_TYPE:
+				return createcourseTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -98,6 +100,8 @@ public class NtnustudiesFactoryImpl extends EFactoryImpl implements NtnustudiesF
 				return convertsemesterTypeToString(eDataType, instanceValue);
 			case NtnustudiesPackage.COURSE_LEVEL:
 				return convertcourseLevelToString(eDataType, instanceValue);
+			case NtnustudiesPackage.COURSE_TYPE:
+				return convertcourseTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -210,6 +214,26 @@ public class NtnustudiesFactoryImpl extends EFactoryImpl implements NtnustudiesF
 	 * @generated
 	 */
 	public String convertcourseLevelToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public courseType createcourseTypeFromString(EDataType eDataType, String initialValue) {
+		courseType result = courseType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertcourseTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

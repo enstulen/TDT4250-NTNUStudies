@@ -13,6 +13,7 @@ import ntnustudies.Specialization;
 import ntnustudies.StudyPlan;
 
 import ntnustudies.courseLevel;
+import ntnustudies.courseType;
 import ntnustudies.semesterType;
 import ntnustudies.util.NtnustudiesValidator;
 import org.eclipse.emf.ecore.EAttribute;
@@ -93,6 +94,13 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 	 * @generated
 	 */
 	private EEnum courseLevelEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum courseTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -206,6 +214,15 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 	 * @generated
 	 */
 	public EAttribute getCourse_Level() {
+		return (EAttribute)courseEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCourse_Type() {
 		return (EAttribute)courseEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -214,17 +231,8 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCourse_Programmes() {
-		return (EReference)courseEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getCourse_Semesters() {
-		return (EAttribute)courseEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)courseEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -259,7 +267,7 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProgramme_Courses() {
+	public EReference getProgramme_Specializations() {
 		return (EReference)programmeEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -268,17 +276,8 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProgramme_Specializations() {
-		return (EReference)programmeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getProgramme_Semesters() {
-		return (EReference)programmeEClass.getEStructuralFeatures().get(4);
+		return (EReference)programmeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -467,7 +466,16 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 	 * @generated
 	 */
 	public EReference getDepartment_Courses() {
-		return (EReference)departmentEClass.getEStructuralFeatures().get(1);
+		return (EReference)departmentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDepartment_Programmes() {
+		return (EReference)departmentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -476,7 +484,7 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 	 * @generated
 	 */
 	public EAttribute getDepartment_ShortName() {
-		return (EAttribute)departmentEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)departmentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -495,6 +503,15 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 	 */
 	public EEnum getcourseLevel() {
 		return courseLevelEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getcourseType() {
+		return courseTypeEEnum;
 	}
 
 	/**
@@ -529,14 +546,13 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 		createEAttribute(courseEClass, COURSE__CODE);
 		createEAttribute(courseEClass, COURSE__NAME);
 		createEAttribute(courseEClass, COURSE__CREDTIS);
-		createEReference(courseEClass, COURSE__PROGRAMMES);
 		createEAttribute(courseEClass, COURSE__SEMESTERS);
 		createEAttribute(courseEClass, COURSE__LEVEL);
+		createEAttribute(courseEClass, COURSE__TYPE);
 
 		programmeEClass = createEClass(PROGRAMME);
 		createEAttribute(programmeEClass, PROGRAMME__NAME);
 		createEAttribute(programmeEClass, PROGRAMME__YEARS);
-		createEReference(programmeEClass, PROGRAMME__COURSES);
 		createEReference(programmeEClass, PROGRAMME__SPECIALIZATIONS);
 		createEReference(programmeEClass, PROGRAMME__SEMESTERS);
 
@@ -564,12 +580,14 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 
 		departmentEClass = createEClass(DEPARTMENT);
 		createEAttribute(departmentEClass, DEPARTMENT__NAME);
-		createEReference(departmentEClass, DEPARTMENT__COURSES);
 		createEAttribute(departmentEClass, DEPARTMENT__SHORT_NAME);
+		createEReference(departmentEClass, DEPARTMENT__COURSES);
+		createEReference(departmentEClass, DEPARTMENT__PROGRAMMES);
 
 		// Create enums
 		semesterTypeEEnum = createEEnum(SEMESTER_TYPE);
 		courseLevelEEnum = createEEnum(COURSE_LEVEL);
+		courseTypeEEnum = createEEnum(COURSE_TYPE);
 	}
 
 	/**
@@ -606,14 +624,13 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 		initEAttribute(getCourse_Code(), ecorePackage.getEString(), "code", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Name(), ecorePackage.getEString(), "name", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Credtis(), ecorePackage.getEFloat(), "credtis", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCourse_Programmes(), this.getProgramme(), null, "programmes", null, 0, -1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Semesters(), this.getsemesterType(), "semesters", null, 0, 2, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Level(), this.getcourseLevel(), "level", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCourse_Type(), this.getcourseType(), "type", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(programmeEClass, Programme.class, "Programme", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProgramme_Name(), ecorePackage.getEString(), "name", null, 0, 1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProgramme_Years(), ecorePackage.getEInt(), "years", null, 0, 1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProgramme_Courses(), this.getCourse(), null, "courses", null, 0, -1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProgramme_Specializations(), this.getSpecialization(), this.getSpecialization_Programme(), "specializations", null, 0, -1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProgramme_Semesters(), this.getSemester(), this.getSemester_Programme(), "semesters", null, 0, -1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -641,8 +658,9 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 
 		initEClass(departmentEClass, Department.class, "Department", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDepartment_Name(), ecorePackage.getEString(), "name", null, 0, 1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDepartment_Courses(), this.getCourse(), null, "courses", null, 0, -1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDepartment_ShortName(), ecorePackage.getEString(), "shortName", null, 0, 1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDepartment_Courses(), this.getCourse(), null, "courses", null, 0, -1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDepartment_Programmes(), this.getProgramme(), null, "programmes", null, 0, -1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(semesterTypeEEnum, semesterType.class, "semesterType");
@@ -653,6 +671,10 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 		addEEnumLiteral(courseLevelEEnum, courseLevel.BASIC);
 		addEEnumLiteral(courseLevelEEnum, courseLevel.MEDIUM);
 		addEEnumLiteral(courseLevelEEnum, courseLevel.HIGH);
+
+		initEEnum(courseTypeEEnum, courseType.class, "courseType");
+		addEEnumLiteral(courseTypeEEnum, courseType.MANDATORY);
+		addEEnumLiteral(courseTypeEEnum, courseType.ELECTIVE);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -677,6 +699,12 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 		   source,
 		   new String[] {
 			   "validationDelegates", "http://www.eclipse.org/acceleo/query/1.0"
+		   });
+		addAnnotation
+		  (programmeEClass,
+		   source,
+		   new String[] {
+			   "constraints", "maxProgramYearsIs5Years programCantHaveNegativeYears"
 		   });
 		addAnnotation
 		  (chosenSemesterEClass,
@@ -704,7 +732,8 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 		  (programmeEClass,
 		   source,
 		   new String[] {
-			   "maxProgramYearsIs5Years", "self.years < 5"
+			   "maxProgramYearsIs5Years", "self.years < 6",
+			   "programCantHaveNegativeYears", "self.years > 0"
 		   });
 	}
 

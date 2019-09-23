@@ -3,8 +3,6 @@
 package ntnustudies.impl;
 
 import java.util.Collection;
-
-import ntnustudies.Course;
 import ntnustudies.NtnustudiesPackage;
 import ntnustudies.Programme;
 import ntnustudies.Semester;
@@ -21,7 +19,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -34,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link ntnustudies.impl.ProgrammeImpl#getName <em>Name</em>}</li>
  *   <li>{@link ntnustudies.impl.ProgrammeImpl#getYears <em>Years</em>}</li>
- *   <li>{@link ntnustudies.impl.ProgrammeImpl#getCourses <em>Courses</em>}</li>
  *   <li>{@link ntnustudies.impl.ProgrammeImpl#getSpecializations <em>Specializations</em>}</li>
  *   <li>{@link ntnustudies.impl.ProgrammeImpl#getSemesters <em>Semesters</em>}</li>
  * </ul>
@@ -81,16 +77,6 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * @ordered
 	 */
 	protected int years = YEARS_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getCourses() <em>Courses</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCourses()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Course> courses;
 
 	/**
 	 * The cached value of the '{@link #getSpecializations() <em>Specializations</em>}' containment reference list.
@@ -178,18 +164,6 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Course> getCourses() {
-		if (courses == null) {
-			courses = new EObjectResolvingEList<Course>(Course.class, this, NtnustudiesPackage.PROGRAMME__COURSES);
-		}
-		return courses;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Specialization> getSpecializations() {
 		if (specializations == null) {
 			specializations = new EObjectContainmentWithInverseEList<Specialization>(Specialization.class, this, NtnustudiesPackage.PROGRAMME__SPECIALIZATIONS, NtnustudiesPackage.SPECIALIZATION__PROGRAMME);
@@ -254,8 +228,6 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				return getName();
 			case NtnustudiesPackage.PROGRAMME__YEARS:
 				return getYears();
-			case NtnustudiesPackage.PROGRAMME__COURSES:
-				return getCourses();
 			case NtnustudiesPackage.PROGRAMME__SPECIALIZATIONS:
 				return getSpecializations();
 			case NtnustudiesPackage.PROGRAMME__SEMESTERS:
@@ -278,10 +250,6 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				return;
 			case NtnustudiesPackage.PROGRAMME__YEARS:
 				setYears((Integer)newValue);
-				return;
-			case NtnustudiesPackage.PROGRAMME__COURSES:
-				getCourses().clear();
-				getCourses().addAll((Collection<? extends Course>)newValue);
 				return;
 			case NtnustudiesPackage.PROGRAMME__SPECIALIZATIONS:
 				getSpecializations().clear();
@@ -309,9 +277,6 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 			case NtnustudiesPackage.PROGRAMME__YEARS:
 				setYears(YEARS_EDEFAULT);
 				return;
-			case NtnustudiesPackage.PROGRAMME__COURSES:
-				getCourses().clear();
-				return;
 			case NtnustudiesPackage.PROGRAMME__SPECIALIZATIONS:
 				getSpecializations().clear();
 				return;
@@ -334,8 +299,6 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case NtnustudiesPackage.PROGRAMME__YEARS:
 				return years != YEARS_EDEFAULT;
-			case NtnustudiesPackage.PROGRAMME__COURSES:
-				return courses != null && !courses.isEmpty();
 			case NtnustudiesPackage.PROGRAMME__SPECIALIZATIONS:
 				return specializations != null && !specializations.isEmpty();
 			case NtnustudiesPackage.PROGRAMME__SEMESTERS:

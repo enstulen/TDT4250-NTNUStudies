@@ -5,9 +5,8 @@ package ntnustudies.impl;
 import java.util.Collection;
 import ntnustudies.Course;
 import ntnustudies.NtnustudiesPackage;
-import ntnustudies.Programme;
-
 import ntnustudies.courseLevel;
+import ntnustudies.courseType;
 import ntnustudies.semesterType;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
@@ -15,7 +14,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,9 +26,9 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link ntnustudies.impl.CourseImpl#getCode <em>Code</em>}</li>
  *   <li>{@link ntnustudies.impl.CourseImpl#getName <em>Name</em>}</li>
  *   <li>{@link ntnustudies.impl.CourseImpl#getCredtis <em>Credtis</em>}</li>
- *   <li>{@link ntnustudies.impl.CourseImpl#getProgrammes <em>Programmes</em>}</li>
  *   <li>{@link ntnustudies.impl.CourseImpl#getSemesters <em>Semesters</em>}</li>
  *   <li>{@link ntnustudies.impl.CourseImpl#getLevel <em>Level</em>}</li>
+ *   <li>{@link ntnustudies.impl.CourseImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -97,16 +95,6 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	protected float credtis = CREDTIS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getProgrammes() <em>Programmes</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProgrammes()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Programme> programmes;
-
-	/**
 	 * The cached value of the '{@link #getSemesters() <em>Semesters</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -135,6 +123,26 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @ordered
 	 */
 	protected courseLevel level = LEVEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final courseType TYPE_EDEFAULT = courseType.MANDATORY;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected courseType type = TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -244,11 +252,20 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Programme> getProgrammes() {
-		if (programmes == null) {
-			programmes = new EObjectResolvingEList<Programme>(Programme.class, this, NtnustudiesPackage.COURSE__PROGRAMMES);
-		}
-		return programmes;
+	public courseType getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(courseType newType) {
+		courseType oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NtnustudiesPackage.COURSE__TYPE, oldType, type));
 	}
 
 	/**
@@ -277,12 +294,12 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				return getName();
 			case NtnustudiesPackage.COURSE__CREDTIS:
 				return getCredtis();
-			case NtnustudiesPackage.COURSE__PROGRAMMES:
-				return getProgrammes();
 			case NtnustudiesPackage.COURSE__SEMESTERS:
 				return getSemesters();
 			case NtnustudiesPackage.COURSE__LEVEL:
 				return getLevel();
+			case NtnustudiesPackage.COURSE__TYPE:
+				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -305,16 +322,15 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			case NtnustudiesPackage.COURSE__CREDTIS:
 				setCredtis((Float)newValue);
 				return;
-			case NtnustudiesPackage.COURSE__PROGRAMMES:
-				getProgrammes().clear();
-				getProgrammes().addAll((Collection<? extends Programme>)newValue);
-				return;
 			case NtnustudiesPackage.COURSE__SEMESTERS:
 				getSemesters().clear();
 				getSemesters().addAll((Collection<? extends semesterType>)newValue);
 				return;
 			case NtnustudiesPackage.COURSE__LEVEL:
 				setLevel((courseLevel)newValue);
+				return;
+			case NtnustudiesPackage.COURSE__TYPE:
+				setType((courseType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -337,14 +353,14 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			case NtnustudiesPackage.COURSE__CREDTIS:
 				setCredtis(CREDTIS_EDEFAULT);
 				return;
-			case NtnustudiesPackage.COURSE__PROGRAMMES:
-				getProgrammes().clear();
-				return;
 			case NtnustudiesPackage.COURSE__SEMESTERS:
 				getSemesters().clear();
 				return;
 			case NtnustudiesPackage.COURSE__LEVEL:
 				setLevel(LEVEL_EDEFAULT);
+				return;
+			case NtnustudiesPackage.COURSE__TYPE:
+				setType(TYPE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -364,12 +380,12 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case NtnustudiesPackage.COURSE__CREDTIS:
 				return credtis != CREDTIS_EDEFAULT;
-			case NtnustudiesPackage.COURSE__PROGRAMMES:
-				return programmes != null && !programmes.isEmpty();
 			case NtnustudiesPackage.COURSE__SEMESTERS:
 				return semesters != null && !semesters.isEmpty();
 			case NtnustudiesPackage.COURSE__LEVEL:
 				return level != LEVEL_EDEFAULT;
+			case NtnustudiesPackage.COURSE__TYPE:
+				return type != TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -394,6 +410,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 		result.append(semesters);
 		result.append(", level: ");
 		result.append(level);
+		result.append(", type: ");
+		result.append(type);
 		result.append(')');
 		return result.toString();
 	}

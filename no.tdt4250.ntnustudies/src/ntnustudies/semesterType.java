@@ -36,7 +36,7 @@ public enum semesterType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SPRING(0, "spring", "spring");
+	SPRING(1, "spring", "spring");
 
 	/**
 	 * The '<em><b>Fall</b></em>' literal value.
@@ -58,7 +58,7 @@ public enum semesterType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SPRING_VALUE = 0;
+	public static final int SPRING_VALUE = 1;
 
 	/**
 	 * An array of all the '<em><b>semester Type</b></em>' enumerators.
@@ -127,6 +127,7 @@ public enum semesterType implements Enumerator {
 	public static semesterType get(int value) {
 		switch (value) {
 			case FALL_VALUE: return FALL;
+			case SPRING_VALUE: return SPRING;
 		}
 		return null;
 	}

@@ -11,31 +11,25 @@
       name="Programvarearkitektur"
       credtis="7.5"
       level="medium">
-    <programmes
-        href="ProgrammeDatateknologi.xmi#/"/>
     <semesters>spring</semesters>
   </courses>
   <courses code="TDT4250"
       name="Avansert programvaredesign"
       credtis="7.5"
       level="high">
-    <programmes
-        href="ProgrammeDatateknologi.xmi#/"/>
     <semesters>fall</semesters>
   </courses>
   <courses code="TDT4175"
       name="Informasjonssystemer"
       credtis="7.5">
-    <programmes
-        href="ProgrammeDatateknologi.xmi#/"/>
     <semesters>fall</semesters>
   </courses>
   <courses code="IT2810"
       name="Webutvikling"
       credtis="7.5"
       level="medium">
-    <programmes
-        href="ProgrammeDatateknologi.xmi#/"/>
     <semesters>fall</semesters>
   </courses>
+  <programmes
+      href="ProgrammeDatateknologi.xmi#/"/>
 </ntnustudies:Department>

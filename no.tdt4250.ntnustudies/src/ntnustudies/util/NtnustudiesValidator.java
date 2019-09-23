@@ -105,6 +105,8 @@ public class NtnustudiesValidator extends EObjectValidator {
 				return validatesemesterType((semesterType)value, diagnostics, context);
 			case NtnustudiesPackage.COURSE_LEVEL:
 				return validatecourseLevel((courseLevel)value, diagnostics, context);
+			case NtnustudiesPackage.COURSE_TYPE:
+				return validatecourseType((courseType)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -125,7 +127,76 @@ public class NtnustudiesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateProgramme(Programme programme, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(programme, diagnostics, context);
+		if (!validate_NoCircularContainment(programme, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgramme_maxProgramYearsIs5Years(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgramme_programCantHaveNegativeYears(programme, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the maxProgramYearsIs5Years constraint of '<em>Programme</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String PROGRAMME__MAX_PROGRAM_YEARS_IS5_YEARS__EEXPRESSION = "self.years < 6";
+
+	/**
+	 * Validates the maxProgramYearsIs5Years constraint of '<em>Programme</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgramme_maxProgramYearsIs5Years(Programme programme, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(NtnustudiesPackage.Literals.PROGRAMME,
+				 programme,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "maxProgramYearsIs5Years",
+				 PROGRAMME__MAX_PROGRAM_YEARS_IS5_YEARS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the programCantHaveNegativeYears constraint of '<em>Programme</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String PROGRAMME__PROGRAM_CANT_HAVE_NEGATIVE_YEARS__EEXPRESSION = "self.years > 0";
+
+	/**
+	 * Validates the programCantHaveNegativeYears constraint of '<em>Programme</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgramme_programCantHaveNegativeYears(Programme programme, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(NtnustudiesPackage.Literals.PROGRAMME,
+				 programme,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "programCantHaveNegativeYears",
+				 PROGRAMME__PROGRAM_CANT_HAVE_NEGATIVE_YEARS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -254,11 +325,11 @@ public class NtnustudiesValidator extends EObjectValidator {
 		for (Specialization specialization : specializations) {
 			Specialization requiredSpecialization = specialization.getRequiredSpecialization();
 			if (requiredSpecialization != null) {
-				if (specializations.stream().anyMatch(s -> s.getName() == requiredSpecialization.getName())) {
-					legalSpecialization = true;
-				} else {
-					legalSpecialization = false;
-				}
+//				if (specializations.stream().anyMatch(s -> s.getName() == requiredSpecialization.getName())) {
+//					legalSpecialization = true;
+//				} else {
+//					legalSpecialization = false;
+//				}
 			}
 		}
 		
@@ -303,6 +374,15 @@ public class NtnustudiesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatecourseLevel(courseLevel courseLevel, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatecourseType(courseType courseType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

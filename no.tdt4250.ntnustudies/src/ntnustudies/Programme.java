@@ -17,13 +17,13 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ntnustudies.Programme#getName <em>Name</em>}</li>
  *   <li>{@link ntnustudies.Programme#getYears <em>Years</em>}</li>
- *   <li>{@link ntnustudies.Programme#getCourses <em>Courses</em>}</li>
  *   <li>{@link ntnustudies.Programme#getSpecializations <em>Specializations</em>}</li>
  *   <li>{@link ntnustudies.Programme#getSemesters <em>Semesters</em>}</li>
  * </ul>
  *
  * @see ntnustudies.NtnustudiesPackage#getProgramme()
- * @model annotation="http://www.eclipse.org/acceleo/query/1.0 maxProgramYearsIs5Years='self.years &lt; 5'"
+ * @model annotation="http://www.eclipse.org/acceleo/query/1.0 maxProgramYearsIs5Years='self.years &lt; 6' programCantHaveNegativeYears='self.years &gt; 0'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='maxProgramYearsIs5Years programCantHaveNegativeYears'"
  * @generated
  */
 public interface Programme extends EObject {
@@ -70,18 +70,6 @@ public interface Programme extends EObject {
 	 * @generated
 	 */
 	void setYears(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Courses</b></em>' reference list.
-	 * The list contents are of type {@link ntnustudies.Course}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Courses</em>' reference list.
-	 * @see ntnustudies.NtnustudiesPackage#getProgramme_Courses()
-	 * @model
-	 * @generated
-	 */
-	EList<Course> getCourses();
 
 	/**
 	 * Returns the value of the '<em><b>Specializations</b></em>' containment reference list.
