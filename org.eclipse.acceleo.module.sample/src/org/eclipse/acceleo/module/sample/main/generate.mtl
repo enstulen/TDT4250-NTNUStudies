@@ -1,0 +1,120 @@
+[comment encoding = UTF-8 /]
+[module generate('platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore', 'http://www.eclipse.org/emf/2002/Ecore')]
+
+
+[template public generateHtml(aDepartment : Department)]
+[comment @main/]
+[file ('sample.html', false, 'UTF-8')]
+
+<html>
+<head> 
+<meta charset="utf-8"/>
+<title>[aDepartment.name/] Courses</title>
+<style>
+div { padding: 16px; }
+</style>
+</head>
+
+<body>
+
+<script type="text/javascript">
+
+function kunstligintelligens() {
+	document.getElementById("Kunstlig").style.display = "block";
+	document.getElementById("Programvaresystemer").style.display = "none";
+	document.getElementById("Programvareutvikling").style.display = "none";
+}
+
+function programvaresystemer() {
+	document.getElementById("Programvaresystemer").style.display = "block";
+	document.getElementById("Kunstlig").style.display = "none";
+	document.getElementById("Programvareutvikling").style.display = "none";
+}
+function programvareutvikling() {
+	document.getElementById("Programvareutvikling").style.display = "block";
+	document.getElementById("Kunstlig").style.display = "none";
+	document.getElementById("Programvaresystemer").style.display = "none";
+}
+
+function alle() {
+	document.getElementById("Programvareutvikling").style.display = "block";
+	document.getElementById("Kunstlig").style.display = "block";
+	document.getElementById("Programvaresystemer").style.display = "block";
+}
+
+</script>
+
+<h1>Studies</h1>
+[for (programme : Programme | aDepartment.programmes)]
+<h2>[programme.name/] - [programme.years/] year masters programme</h2>
+
+	<button onclick='alle()'>Alle</button>
+	<button onclick='kunstligintelligens()'>Kunstlig intelligens</button>
+	<button onclick='programvaresystemer()'>Programvaresystemer</button>
+	<button onclick='programvareutvikling()'>Programvareutvikling</button>
+
+	[for (specialization : Specialization | programme.specializations)]
+		[listSpecialization(specialization)/]
+	[/for]
+
+[/for]
+
+</body>
+</html>
+
+
+[/file]
+
+ 
+
+[/template]
+
+[template public listSpecialization(specialization: Specialization)]
+	<div id=[specialization.name/]>
+	<h2>Specialization: [specialization.name/]</h2>
+	[for (semester : Semester | specialization.semesters)]
+		[listSemesters(semester)/]
+	[/for]
+	</div>
+[/template]
+
+[template public listSemesters(semester: Semester)]
+	<h3> Year [semester.year/] - <b>[semester.type/]</b></h3>
+	<h4>Mandatory</h4>
+		<table style="width:100%">
+  <col width="600">
+  <col width="200">
+			  <tr>
+				<th style="text-align: left;">Name</th>
+				<th style="text-align: left;">Credits</th>
+			  </tr>
+	[for (course : Course | semester.possibleCourses)]
+	[if (course.type.toString() = 'mandatory')]
+			<tr style="width:200px">
+				<td style="text-align: left;">[course.name/]</td>
+				<td style="text-align: left;">[course.credtis/]</td>
+			</tr>
+	[/if]
+	[/for]
+		</table>	
+
+	<h4>Elective</h4>
+		<table style="width:100%">
+  <col width="600">
+  <col width="200">
+			 <tr>
+				<th style="text-align: left;">Name</th>
+				<th style="text-align: left;">Credits</th>
+			  </tr>
+	[for (course : Course | semester.possibleCourses)]
+	[if (course.type.toString() = 'elective')]
+			<tr style="width:200px">
+				<td style="text-align: left;">[course.name/]</td>
+				<td style="text-align: left;">[course.credtis/]</td>
+			</tr>
+	[/if]
+	[/for]
+		</table>
+
+
+[/template]

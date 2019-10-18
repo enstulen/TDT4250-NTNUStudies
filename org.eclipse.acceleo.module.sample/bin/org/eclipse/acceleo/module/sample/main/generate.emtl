@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="generate" nsURI="org::eclipse::acceleo::module::sample::main::generate" startHeaderPosition="29" endHeaderPosition="228">
+    <input>
+      <takesTypesFrom href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateHtml" visibility="Public" main="true">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&lt;html>&#xA;&lt;head> &#xA;&lt;meta charset=&quot;utf-8&quot;/>&#xA;&lt;title>"/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="aDepartment" referredVariable="/0/generateHtml/aDepartment">
+            <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Department"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Department/name"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" Courses&lt;/title>&#xA;&lt;style>&#xA;div { padding: 16px; }&#xA;&lt;/style>&#xA;&lt;/head>&#xA;&#xA;&lt;body>&#xA;&#xA;&lt;script type=&quot;text/javascript&quot;>&#xA;&#xA;function kunstligintelligens() {&#xA;&#x9;document.getElementById(&quot;Kunstlig&quot;).style.display = &quot;block&quot;;&#xA;&#x9;document.getElementById(&quot;Programvaresystemer&quot;).style.display = &quot;none&quot;;&#xA;&#x9;document.getElementById(&quot;Programvareutvikling&quot;).style.display = &quot;none&quot;;&#xA;}&#xA;&#xA;function programvaresystemer() {&#xA;&#x9;document.getElementById(&quot;Programvaresystemer&quot;).style.display = &quot;block&quot;;&#xA;&#x9;document.getElementById(&quot;Kunstlig&quot;).style.display = &quot;none&quot;;&#xA;&#x9;document.getElementById(&quot;Programvareutvikling&quot;).style.display = &quot;none&quot;;&#xA;}&#xA;function programvareutvikling() {&#xA;&#x9;document.getElementById(&quot;Programvareutvikling&quot;).style.display = &quot;block&quot;;&#xA;&#x9;document.getElementById(&quot;Kunstlig&quot;).style.display = &quot;none&quot;;&#xA;&#x9;document.getElementById(&quot;Programvaresystemer&quot;).style.display = &quot;none&quot;;&#xA;}&#xA;&#xA;function alle() {&#xA;&#x9;document.getElementById(&quot;Programvareutvikling&quot;).style.display = &quot;block&quot;;&#xA;&#x9;document.getElementById(&quot;Kunstlig&quot;).style.display = &quot;block&quot;;&#xA;&#x9;document.getElementById(&quot;Programvaresystemer&quot;).style.display = &quot;block&quot;;&#xA;}&#xA;&#xA;&lt;/script>&#xA;&#xA;&lt;h1>Studies&lt;/h1>&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;h2>"/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="programme" referredVariable="/0/generateHtml/%/%.3/programme">
+              <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Programme"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Programme/name"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" - "/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="programme" referredVariable="/0/generateHtml/%/%.3/programme">
+              <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Programme"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Programme/years"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" year masters programme&lt;/h2>&#xA;&#xA;&#x9;&lt;button onclick='alle()'>Alle&lt;/button>&#xA;&#x9;&lt;button onclick='kunstligintelligens()'>Kunstlig intelligens&lt;/button>&#xA;&#x9;&lt;button onclick='programvaresystemer()'>Programvaresystemer&lt;/button>&#xA;&#x9;&lt;button onclick='programvareutvikling()'>Programvareutvikling&lt;/button>&#xA;&#xA;"/>
+          <body xsi:type="mtl:ForBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;"/>
+            <body xsi:type="mtl:TemplateInvocation" definition="/0/listSpecialization">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="specialization" referredVariable="/0/generateHtml/%/%.3/%.5/specialization">
+                <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+            <loopVariable name="specialization">
+              <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization"/>
+            </loopVariable>
+            <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/9/OrderedSet(Specialization)">
+              <source xsi:type="ocl.ecore:VariableExp" name="programme" referredVariable="/0/generateHtml/%/%.3/programme">
+                <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Programme"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Programme/specializations"/>
+            </iterSet>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <loopVariable name="programme">
+            <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Programme"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/9/OrderedSet(Programme)">
+            <source xsi:type="ocl.ecore:VariableExp" name="aDepartment" referredVariable="/0/generateHtml/aDepartment">
+              <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Department"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Department/programmes"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&lt;/body>&#xA;&lt;/html>&#xA;&#xA;&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="sample.html">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; &#xA;"/>
+      <parameter name="aDepartment">
+        <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Department"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="listSpecialization" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&lt;div id="/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="specialization" referredVariable="/0/listSpecialization/specialization">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization/name"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=">&#xA;&#x9;&lt;h2>Specialization: "/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="specialization" referredVariable="/0/listSpecialization/specialization">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization/name"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/h2>&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;"/>
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/listSemesters">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="semester" referredVariable="/0/listSpecialization/%.5/semester">
+            <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <loopVariable name="semester">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/9/OrderedSet(Semester)">
+          <source xsi:type="ocl.ecore:VariableExp" name="specialization" referredVariable="/0/listSpecialization/specialization">
+            <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization/semesters"/>
+        </iterSet>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&lt;/div>"/>
+      <parameter name="specialization">
+        <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="listSemesters" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&lt;h3> Year "/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="semester" referredVariable="/0/listSemesters/semester">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester/year"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" - &lt;b>"/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ecore:EEnum" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//semesterType"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="semester" referredVariable="/0/listSemesters/semester">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester/type"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/b>&lt;/h3>&#xA;&#x9;&lt;h4>Mandatory&lt;/h4>&#xA;&#x9;&#x9;&lt;table style=&quot;width:100%&quot;>&#xA;  &lt;col width=&quot;600&quot;>&#xA;  &lt;col width=&quot;200&quot;>&#xA;&#x9;&#x9;&#x9;  &lt;tr>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;th style=&quot;text-align: left;&quot;>Name&lt;/th>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;th style=&quot;text-align: left;&quot;>Credits&lt;/th>&#xA;&#x9;&#x9;&#x9;  &lt;/tr>&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="mtl:IfBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&lt;tr style=&quot;width:200px&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;td style=&quot;text-align: left;&quot;>"/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="course" referredVariable="/0/listSemesters/%.5/course">
+              <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course/name"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/td>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;td style=&quot;text-align: left;&quot;>"/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="course" referredVariable="/0/listSemesters/%.5/course">
+              <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course/credtis"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/td>&#xA;&#x9;&#x9;&#x9;&lt;/tr>&#xA;"/>
+          <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EEnum" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//courseType"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="course" referredVariable="/0/listSemesters/%.5/course">
+                  <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course/type"/>
+              </source>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="mandatory">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+          </ifExpr>
+        </body>
+        <loopVariable name="course">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/9/OrderedSet(Course)">
+          <source xsi:type="ocl.ecore:VariableExp" name="semester" referredVariable="/0/listSemesters/semester">
+            <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester/possibleCourses"/>
+        </iterSet>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&lt;/table>&#x9;&#xA;&#xA;&#x9;&lt;h4>Elective&lt;/h4>&#xA;&#x9;&#x9;&lt;table style=&quot;width:100%&quot;>&#xA;  &lt;col width=&quot;600&quot;>&#xA;  &lt;col width=&quot;200&quot;>&#xA;&#x9;&#x9;&#x9; &lt;tr>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;th style=&quot;text-align: left;&quot;>Name&lt;/th>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;th style=&quot;text-align: left;&quot;>Credits&lt;/th>&#xA;&#x9;&#x9;&#x9;  &lt;/tr>&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="mtl:IfBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&lt;tr style=&quot;width:200px&quot;>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;td style=&quot;text-align: left;&quot;>"/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="course" referredVariable="/0/listSemesters/%.7/course">
+              <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course/name"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/td>&#xA;&#x9;&#x9;&#x9;&#x9;&lt;td style=&quot;text-align: left;&quot;>"/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="course" referredVariable="/0/listSemesters/%.7/course">
+              <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course/credtis"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/td>&#xA;&#x9;&#x9;&#x9;&lt;/tr>&#xA;"/>
+          <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EEnum" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//courseType"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="course" referredVariable="/0/listSemesters/%.7/course">
+                  <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course/type"/>
+              </source>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="elective">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+          </ifExpr>
+        </body>
+        <loopVariable name="course">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/9/OrderedSet(Course)">
+          <source xsi:type="ocl.ecore:VariableExp" name="semester" referredVariable="/0/listSemesters/semester">
+            <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester/possibleCourses"/>
+        </iterSet>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&lt;/table>&#xA;&#xA;"/>
+      <parameter name="semester">
+        <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generateHtml">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateHtml"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aDepartment">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Department"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="listSpecialization">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/listSpecialization"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="specialization">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="listSemesters">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/listSemesters"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="semester">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+      <eOperations name="toString">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ntnustudies_Department_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Department"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ntnustudies_Specialization_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ntnustudies_Semester_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Department"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Department"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Department"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Department"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Department"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Programme)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Programme"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Specialization)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Semester)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Course)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Department"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Programme"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Programme"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Programme"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Programme"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Programme"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Department"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Specialization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Course"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore#//Semester"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/generateHtml">
+      <details key="start" value="157"/>
+      <details key="end" value="1978"/>
+      <details key="line" value="5"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateHtml/%">
+      <details key="start" value="231"/>
+      <details key="end" value="1962"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateHtml/%/%">
+      <details key="start" value="270"/>
+      <details key="end" value="317"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateHtml/%/%.1">
+      <details key="start" value="318"/>
+      <details key="end" value="334"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateHtml/%/%.1/aDepartment">
+      <details key="start" value="318"/>
+      <details key="end" value="329"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateHtml/%/%.2">
+      <details key="start" value="336"/>
+      <details key="end" value="1430"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateHtml/%/%.3">
+      <details key="start" value="1430"/>
+      <details key="end" value="1935"/>
+      <details key="line" value="48"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateHtml/%/%.3/%">
+      <details key="start" value="1485"/>
+      <details key="end" value="1489"/>
+      <details key="line" value="49"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateHtml/%/%.3/%.1">
+      <details key="start" value="1490"/>
+      <details key="end" value="1504"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateHtml/%/%.3/%.1/programme">
+      <details key="start" value="1490"/>
+      <details key="end" value="1499"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateHtml/%/%.3/%.2">
+      <details key="start" value="1506"/>
+      <details key="end" value="1509"/>
+      <details key="line" value="49"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateHtml/%/%.3/%.3">
+      <details key="start" value="1510"/>
+      <details key="end" value="1525"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateHtml/%/%.3/%.3/programme">
+      <details key="start" value="1510"/>
+      <details key="end" value="1519"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateHtml/%/%.3/%.4">
+      <details key="start" value="1527"/>
+      <details key="end" value="1811"/>
+      <details key="line" value="49"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateHtml/%/%.3/%.5">
+      <details key="start" value="1812"/>
+      <details key="end" value="1927"/>
+      <details key="line" value="56"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateHtml/%/%.3/%.5/%">
+      <details key="start" value="1880"/>
+      <details key="end" value="1882"/>
+      <details key="line" value="57"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateHtml/%/%.3/%.5/%.1">
+      <details key="start" value="1883"/>
+      <details key="end" value="1917"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateHtml/%/%.3/%.5/%.1/specialization">
+      <details key="start" value="1902"/>
+      <details key="end" value="1916"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateHtml/%/%.3/%.5/%.2">
+      <details key="start" value="1919"/>
+      <details key="end" value="1920"/>
+      <details key="line" value="58"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateHtml/%/%.3/%.5/specialization">
+      <details key="start" value="1818"/>
+      <details key="end" value="1849"/>
+      <details key="line" value="56"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateHtml/%/%.3/%.5/%.3">
+      <details key="start" value="1852"/>
+      <details key="end" value="1877"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateHtml/%/%.3/%.5/%.3/programme">
+      <details key="start" value="1852"/>
+      <details key="end" value="1861"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateHtml/%/%.3/%.6">
+      <details key="start" value="1928"/>
+      <details key="end" value="1929"/>
+      <details key="line" value="59"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateHtml/%/%.3/programme">
+      <details key="start" value="1436"/>
+      <details key="end" value="1457"/>
+      <details key="line" value="48"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generateHtml/%/%.3/%.7">
+      <details key="start" value="1460"/>
+      <details key="end" value="1482"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generateHtml/%/%.3/%.7/aDepartment">
+      <details key="start" value="1460"/>
+      <details key="end" value="1471"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generateHtml/%/%.4">
+      <details key="start" value="1936"/>
+      <details key="end" value="1955"/>
+      <details key="line" value="61"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generateHtml/%/%.5">
+      <details key="start" value="238"/>
+      <details key="end" value="251"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generateHtml/%/%.6">
+      <details key="start" value="260"/>
+      <details key="end" value="267"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generateHtml/%.1">
+      <details key="start" value="1963"/>
+      <details key="end" value="1966"/>
+      <details key="line" value="67"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generateHtml/aDepartment">
+      <details key="start" value="187"/>
+      <details key="end" value="211"/>
+      <details key="line" value="5"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/listSpecialization">
+      <details key="start" value="1980"/>
+      <details key="end" value="2243"/>
+      <details key="line" value="72"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/listSpecialization/%">
+      <details key="start" value="2049"/>
+      <details key="end" value="2058"/>
+      <details key="line" value="73"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/listSpecialization/%.1">
+      <details key="start" value="2059"/>
+      <details key="end" value="2078"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/listSpecialization/%.1/specialization">
+      <details key="start" value="2059"/>
+      <details key="end" value="2073"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/listSpecialization/%.2">
+      <details key="start" value="2080"/>
+      <details key="end" value="2103"/>
+      <details key="line" value="73"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/listSpecialization/%.3">
+      <details key="start" value="2104"/>
+      <details key="end" value="2123"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/listSpecialization/%.3/specialization">
+      <details key="start" value="2104"/>
+      <details key="end" value="2118"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/listSpecialization/%.4">
+      <details key="start" value="2125"/>
+      <details key="end" value="2131"/>
+      <details key="line" value="74"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/listSpecialization/%.5">
+      <details key="start" value="2132"/>
+      <details key="end" value="2223"/>
+      <details key="line" value="75"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/listSpecialization/%.5/%">
+      <details key="start" value="2187"/>
+      <details key="end" value="2189"/>
+      <details key="line" value="76"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/listSpecialization/%.5/%.1">
+      <details key="start" value="2190"/>
+      <details key="end" value="2213"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/listSpecialization/%.5/%.1/semester">
+      <details key="start" value="2204"/>
+      <details key="end" value="2212"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/listSpecialization/%.5/%.2">
+      <details key="start" value="2215"/>
+      <details key="end" value="2216"/>
+      <details key="line" value="77"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/listSpecialization/%.5/semester">
+      <details key="start" value="2138"/>
+      <details key="end" value="2157"/>
+      <details key="line" value="75"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/listSpecialization/%.5/%.3">
+      <details key="start" value="2160"/>
+      <details key="end" value="2184"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/listSpecialization/%.5/%.3/specialization">
+      <details key="start" value="2160"/>
+      <details key="end" value="2174"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/listSpecialization/%.6">
+      <details key="start" value="2224"/>
+      <details key="end" value="2231"/>
+      <details key="line" value="78"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/listSpecialization/specialization">
+      <details key="start" value="2016"/>
+      <details key="end" value="2046"/>
+      <details key="line" value="72"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/listSemesters">
+      <details key="start" value="2245"/>
+      <details key="end" value="3312"/>
+      <details key="line" value="81"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/listSemesters/%">
+      <details key="start" value="2297"/>
+      <details key="end" value="2308"/>
+      <details key="line" value="82"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/listSemesters/%.1">
+      <details key="start" value="2309"/>
+      <details key="end" value="2322"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/listSemesters/%.1/semester">
+      <details key="start" value="2309"/>
+      <details key="end" value="2317"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/listSemesters/%.2">
+      <details key="start" value="2324"/>
+      <details key="end" value="2330"/>
+      <details key="line" value="82"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/listSemesters/%.3">
+      <details key="start" value="2331"/>
+      <details key="end" value="2344"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/listSemesters/%.3/semester">
+      <details key="start" value="2331"/>
+      <details key="end" value="2339"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/listSemesters/%.4">
+      <details key="start" value="2346"/>
+      <details key="end" value="2557"/>
+      <details key="line" value="82"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/listSemesters/%.5">
+      <details key="start" value="2558"/>
+      <details key="end" value="2816"/>
+      <details key="line" value="91"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/listSemesters/%.5/%">
+      <details key="start" value="2610"/>
+      <details key="end" value="2808"/>
+      <details key="line" value="92"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/listSemesters/%.5/%/%">
+      <details key="start" value="2654"/>
+      <details key="end" value="2716"/>
+      <details key="line" value="93"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/listSemesters/%.5/%/%.1">
+      <details key="start" value="2717"/>
+      <details key="end" value="2728"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/listSemesters/%.5/%/%.1/course">
+      <details key="start" value="2717"/>
+      <details key="end" value="2723"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/listSemesters/%.5/%/%.2">
+      <details key="start" value="2730"/>
+      <details key="end" value="2770"/>
+      <details key="line" value="94"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/listSemesters/%.5/%/%.3">
+      <details key="start" value="2771"/>
+      <details key="end" value="2785"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/listSemesters/%.5/%/%.3/course">
+      <details key="start" value="2771"/>
+      <details key="end" value="2777"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/listSemesters/%.5/%/%.4">
+      <details key="start" value="2787"/>
+      <details key="end" value="2802"/>
+      <details key="line" value="95"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/listSemesters/%.5/%/%.5">
+      <details key="start" value="2614"/>
+      <details key="end" value="2652"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/listSemesters/%.5/%/%.5/%">
+      <details key="start" value="2615"/>
+      <details key="end" value="2637"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/listSemesters/%.5/%/%.5/%/%">
+      <details key="start" value="2615"/>
+      <details key="end" value="2626"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/listSemesters/%.5/%/%.5/%/%/course">
+      <details key="start" value="2615"/>
+      <details key="end" value="2621"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/listSemesters/%.5/%/%.5/%.1">
+      <details key="start" value="2640"/>
+      <details key="end" value="2651"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/listSemesters/%.5/course">
+      <details key="start" value="2564"/>
+      <details key="end" value="2579"/>
+      <details key="line" value="91"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/listSemesters/%.5/%.1">
+      <details key="start" value="2582"/>
+      <details key="end" value="2606"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/listSemesters/%.5/%.1/semester">
+      <details key="start" value="2582"/>
+      <details key="end" value="2590"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/listSemesters/%.6">
+      <details key="start" value="2817"/>
+      <details key="end" value="3029"/>
+      <details key="line" value="99"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/listSemesters/%.7">
+      <details key="start" value="3030"/>
+      <details key="end" value="3287"/>
+      <details key="line" value="109"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/listSemesters/%.7/%">
+      <details key="start" value="3082"/>
+      <details key="end" value="3279"/>
+      <details key="line" value="110"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/listSemesters/%.7/%/%">
+      <details key="start" value="3125"/>
+      <details key="end" value="3187"/>
+      <details key="line" value="111"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/listSemesters/%.7/%/%.1">
+      <details key="start" value="3188"/>
+      <details key="end" value="3199"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/listSemesters/%.7/%/%.1/course">
+      <details key="start" value="3188"/>
+      <details key="end" value="3194"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/listSemesters/%.7/%/%.2">
+      <details key="start" value="3201"/>
+      <details key="end" value="3241"/>
+      <details key="line" value="112"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/listSemesters/%.7/%/%.3">
+      <details key="start" value="3242"/>
+      <details key="end" value="3256"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/listSemesters/%.7/%/%.3/course">
+      <details key="start" value="3242"/>
+      <details key="end" value="3248"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/listSemesters/%.7/%/%.4">
+      <details key="start" value="3258"/>
+      <details key="end" value="3273"/>
+      <details key="line" value="113"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/listSemesters/%.7/%/%.5">
+      <details key="start" value="3086"/>
+      <details key="end" value="3123"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/listSemesters/%.7/%/%.5/%">
+      <details key="start" value="3087"/>
+      <details key="end" value="3109"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/listSemesters/%.7/%/%.5/%/%">
+      <details key="start" value="3087"/>
+      <details key="end" value="3098"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/listSemesters/%.7/%/%.5/%/%/course">
+      <details key="start" value="3087"/>
+      <details key="end" value="3093"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/listSemesters/%.7/%/%.5/%.1">
+      <details key="start" value="3112"/>
+      <details key="end" value="3122"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/listSemesters/%.7/course">
+      <details key="start" value="3036"/>
+      <details key="end" value="3051"/>
+      <details key="line" value="109"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/listSemesters/%.7/%.1">
+      <details key="start" value="3054"/>
+      <details key="end" value="3078"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/listSemesters/%.7/%.1/semester">
+      <details key="start" value="3054"/>
+      <details key="end" value="3062"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.92" references="/0/listSemesters/%.8">
+      <details key="start" value="3288"/>
+      <details key="end" value="3300"/>
+      <details key="line" value="117"/>
+    </eAnnotations>
+    <eAnnotations source="positions.93" references="/0/listSemesters/semester">
+      <details key="start" value="2276"/>
+      <details key="end" value="2294"/>
+      <details key="line" value="81"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

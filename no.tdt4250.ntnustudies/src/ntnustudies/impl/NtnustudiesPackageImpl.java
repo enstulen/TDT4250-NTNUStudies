@@ -339,6 +339,15 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSpecialization_Semesters() {
+		return (EReference)specializationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSemester() {
 		return semesterEClass;
 	}
@@ -562,6 +571,7 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 		createEReference(specializationEClass, SPECIALIZATION__COURSES);
 		createEReference(specializationEClass, SPECIALIZATION__REQUIRED_SPECIALIZATION);
 		createEAttribute(specializationEClass, SPECIALIZATION__SPECIALIZATION_CHOICE_POINT_SEMESTER);
+		createEReference(specializationEClass, SPECIALIZATION__SEMESTERS);
 
 		semesterEClass = createEClass(SEMESTER);
 		createEReference(semesterEClass, SEMESTER__POSSIBLE_COURSES);
@@ -640,6 +650,7 @@ public class NtnustudiesPackageImpl extends EPackageImpl implements NtnustudiesP
 		initEReference(getSpecialization_Courses(), this.getCourse(), null, "courses", null, 0, -1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpecialization_RequiredSpecialization(), this.getSpecialization(), null, "requiredSpecialization", null, 0, 1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSpecialization_SpecializationChoicePointSemester(), ecorePackage.getEInt(), "specializationChoicePointSemester", null, 0, 1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecialization_Semesters(), this.getSemester(), null, "semesters", null, 0, -1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(semesterEClass, Semester.class, "Semester", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSemester_PossibleCourses(), this.getCourse(), null, "possibleCourses", null, 0, -1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

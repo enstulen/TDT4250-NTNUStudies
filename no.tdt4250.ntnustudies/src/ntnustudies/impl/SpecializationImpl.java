@@ -7,6 +7,7 @@ import java.util.Collection;
 import ntnustudies.Course;
 import ntnustudies.NtnustudiesPackage;
 import ntnustudies.Programme;
+import ntnustudies.Semester;
 import ntnustudies.Specialization;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -19,8 +20,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,6 +38,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link ntnustudies.impl.SpecializationImpl#getCourses <em>Courses</em>}</li>
  *   <li>{@link ntnustudies.impl.SpecializationImpl#getRequiredSpecialization <em>Required Specialization</em>}</li>
  *   <li>{@link ntnustudies.impl.SpecializationImpl#getSpecializationChoicePointSemester <em>Specialization Choice Point Semester</em>}</li>
+ *   <li>{@link ntnustudies.impl.SpecializationImpl#getSemesters <em>Semesters</em>}</li>
  * </ul>
  *
  * @generated
@@ -99,6 +103,16 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected int specializationChoicePointSemester = SPECIALIZATION_CHOICE_POINT_SEMESTER_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSemesters() <em>Semesters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSemesters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Semester> semesters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,6 +271,18 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Semester> getSemesters() {
+		if (semesters == null) {
+			semesters = new EObjectContainmentEList<Semester>(Semester.class, this, NtnustudiesPackage.SPECIALIZATION__SEMESTERS);
+		}
+		return semesters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -278,6 +304,8 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 		switch (featureID) {
 			case NtnustudiesPackage.SPECIALIZATION__PROGRAMME:
 				return basicSetProgramme(null, msgs);
+			case NtnustudiesPackage.SPECIALIZATION__SEMESTERS:
+				return ((InternalEList<?>)getSemesters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -315,6 +343,8 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 				return basicGetRequiredSpecialization();
 			case NtnustudiesPackage.SPECIALIZATION__SPECIALIZATION_CHOICE_POINT_SEMESTER:
 				return getSpecializationChoicePointSemester();
+			case NtnustudiesPackage.SPECIALIZATION__SEMESTERS:
+				return getSemesters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -344,6 +374,10 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 			case NtnustudiesPackage.SPECIALIZATION__SPECIALIZATION_CHOICE_POINT_SEMESTER:
 				setSpecializationChoicePointSemester((Integer)newValue);
 				return;
+			case NtnustudiesPackage.SPECIALIZATION__SEMESTERS:
+				getSemesters().clear();
+				getSemesters().addAll((Collection<? extends Semester>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -371,6 +405,9 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 			case NtnustudiesPackage.SPECIALIZATION__SPECIALIZATION_CHOICE_POINT_SEMESTER:
 				setSpecializationChoicePointSemester(SPECIALIZATION_CHOICE_POINT_SEMESTER_EDEFAULT);
 				return;
+			case NtnustudiesPackage.SPECIALIZATION__SEMESTERS:
+				getSemesters().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -393,6 +430,8 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 				return requiredSpecialization != null;
 			case NtnustudiesPackage.SPECIALIZATION__SPECIALIZATION_CHOICE_POINT_SEMESTER:
 				return specializationChoicePointSemester != SPECIALIZATION_CHOICE_POINT_SEMESTER_EDEFAULT;
+			case NtnustudiesPackage.SPECIALIZATION__SEMESTERS:
+				return semesters != null && !semesters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

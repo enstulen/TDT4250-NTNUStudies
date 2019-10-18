@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ntnustudies" nsURI="ntnustudies" nsPrefix="ntnustudies">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ntnustudies" nsURI="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore"
+    nsPrefix="ntnustudies">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="validationDelegates" value="http://www.eclipse.org/acceleo/query/1.0"/>
   </eAnnotations>
@@ -38,6 +39,8 @@
         eType="#//Specialization"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="specializationChoicePointSemester"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semesters" upperBound="-1"
+        eType="#//Semester" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Semester">
     <eStructuralFeatures xsi:type="ecore:EReference" name="possibleCourses" upperBound="-1"

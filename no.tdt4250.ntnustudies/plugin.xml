@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated ntnustudies -->
       <package
-            uri="ntnustudies"
+            uri="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore"
             class="ntnustudies.NtnustudiesPackage"
             genModel="model/ntnustudies.genmodel"/>
    </extension>

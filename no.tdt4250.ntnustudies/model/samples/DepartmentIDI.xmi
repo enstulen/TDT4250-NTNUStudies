@@ -2,9 +2,7 @@
 <ntnustudies:Department
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ntnustudies="ntnustudies"
-    xsi:schemaLocation="ntnustudies ../ntnustudies.ecore"
+    xmlns:ntnustudies="platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore"
     name="Institutt for datateknologi og informatikk"
     shortName="IDI">
   <courses code="TDT4240"
@@ -27,9 +25,120 @@
   <courses code="IT2810"
       name="Webutvikling"
       credtis="7.5"
-      level="medium">
+      level="medium"
+      type="elective">
+    <semesters>fall</semesters>
+  </courses>
+  <courses code="TDT4136"
+      name="Introduksjon til kunstig intelligens"
+      credtis="7.5">
+    <semesters>fall</semesters>
+  </courses>
+  <courses code="TDT4175"
+      name="Informasjonssystemer"
+      credtis="7.5"
+      type="elective">
+    <semesters>fall</semesters>
+  </courses>
+  <courses code="TMA4135"
+      name="Matematikk 4D"
+      credtis="7.5">
+    <semesters>fall</semesters>
+  </courses>
+  <courses code="TDT4117"
+      name="Informasjonsgjenfinning"
+      credtis="7.5"
+      type="elective">
+    <semesters>fall</semesters>
+  </courses>
+  <courses code="TDT4137"
+      name="Kognitive arkitekturer"
+      credtis="7.5"
+      level="medium"
+      type="elective">
+    <semesters>fall</semesters>
+  </courses>
+  <courses code="TDT4165"
+      name="Programmeringsspråk"
+      credtis="7.5"
+      type="elective">
+    <semesters>fall</semesters>
+  </courses>
+  <courses code="TDT4258"
+      name="Maskinnær programmering"
+      credtis="7.5"
+      type="elective">
+    <semesters>fall</semesters>
+  </courses>
+  <courses code="TDT4186"
+      name="Operativsystemer"
+      credtis="7.5">
+    <semesters>spring</semesters>
+  </courses>
+  <courses code="TFY4125"
+      name="Fysikk"
+      credtis="7.5">
+    <semesters>spring</semesters>
+  </courses>
+  <courses code="TIØ4258"
+      name="Teknologiledelse"
+      credtis="7.5">
+    <semesters>spring</semesters>
+  </courses>
+  <courses code="TDT4137&#x9;&#xA;"
+      name="Kognitive arkitekturer"
+      credtis="7.5">
+    <semesters>fall</semesters>
+  </courses>
+  <courses code="TDT4171"
+      name="Metoder i kunstig intelligens"
+      credtis="7.5">
+    <semesters>spring</semesters>
+  </courses>
+  <courses code="TDT4290"
+      name="Kundestyrt prosjekt"
+      credtis="15.0">
     <semesters>fall</semesters>
   </courses>
   <programmes
-      href="ProgrammeDatateknologi.xmi#/"/>
+      name="Datateknologi"
+      years="5">
+    <specializations
+        name="Programvaresystemer"
+        courses="//@courses.0"
+        specializationChoicePointSemester="3">
+      <semesters
+          possibleCourses="//@courses.2 //@courses.3 //@courses.4 //@courses.6 //@courses.7 //@courses.8 //@courses.9 //@courses.10"
+          year="3"/>
+      <semesters
+          possibleCourses="//@courses.0 //@courses.11 //@courses.12 //@courses.13"
+          type="spring"
+          year="3"/>
+    </specializations>
+    <specializations
+        name="Programvareutvikling"
+        courses="//@courses.1"
+        specializationChoicePointSemester="4">
+      <semesters
+          possibleCourses="//@courses.2 //@courses.3 //@courses.4 //@courses.6 //@courses.7 //@courses.8 //@courses.9 //@courses.10"
+          year="3"/>
+      <semesters
+          possibleCourses="//@courses.0 //@courses.11 //@courses.12 //@courses.13"
+          type="spring"
+          year="3"/>
+      <semesters
+          possibleCourses="//@courses.1 //@courses.16"
+          year="4"/>
+    </specializations>
+    <specializations
+        name="Kunstlig intelligens">
+      <semesters
+          possibleCourses="//@courses.14 //@courses.6 //@courses.3 //@courses.4 //@courses.7 //@courses.9"
+          year="3"/>
+      <semesters
+          possibleCourses="//@courses.15 //@courses.11 //@courses.12 //@courses.13"
+          type="spring"
+          year="3"/>
+    </specializations>
+  </programmes>
 </ntnustudies:Department>
