@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ntnustudies.Specialization#getCourses <em>Courses</em>}</li>
  *   <li>{@link ntnustudies.Specialization#getRequiredSpecialization <em>Required Specialization</em>}</li>
  *   <li>{@link ntnustudies.Specialization#getSpecializationChoicePointSemester <em>Specialization Choice Point Semester</em>}</li>
+ *   <li>{@link ntnustudies.Specialization#getSemesters <em>Semesters</em>}</li>
  * </ul>
  *
  * @see ntnustudies.NtnustudiesPackage#getSpecialization()
@@ -128,5 +129,17 @@ public interface Specialization extends EObject {
 	 * @generated
 	 */
 	void setSpecializationChoicePointSemester(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Semesters</b></em>' containment reference list.
+	 * The list contents are of type {@link ntnustudies.Semester}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Semesters</em>' containment reference list.
+	 * @see ntnustudies.NtnustudiesPackage#getSpecialization_Semesters()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Semester> getSemesters();
 
 } // Specialization

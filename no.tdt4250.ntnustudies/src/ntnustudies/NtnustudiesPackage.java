@@ -40,7 +40,7 @@ public interface NtnustudiesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "ntnustudies";
+	String eNS_URI = "platform:/plugin/no.tdt4250.ntnustudies/model/ntnustudies.ecore";
 
 	/**
 	 * The package namespace name.
@@ -260,13 +260,22 @@ public interface NtnustudiesPackage extends EPackage {
 	int SPECIALIZATION__SPECIALIZATION_CHOICE_POINT_SEMESTER = 4;
 
 	/**
+	 * The feature id for the '<em><b>Semesters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIALIZATION__SEMESTERS = 5;
+
+	/**
 	 * The number of structural features of the '<em>Specialization</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIALIZATION_FEATURE_COUNT = 5;
+	int SPECIALIZATION_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Specialization</em>' class.
@@ -736,6 +745,17 @@ public interface NtnustudiesPackage extends EPackage {
 	EAttribute getSpecialization_SpecializationChoicePointSemester();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link ntnustudies.Specialization#getSemesters <em>Semesters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Semesters</em>'.
+	 * @see ntnustudies.Specialization#getSemesters()
+	 * @see #getSpecialization()
+	 * @generated
+	 */
+	EReference getSpecialization_Semesters();
+
+	/**
 	 * Returns the meta object for class '{@link ntnustudies.Semester <em>Semester</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1120,6 +1140,14 @@ public interface NtnustudiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SPECIALIZATION__SPECIALIZATION_CHOICE_POINT_SEMESTER = eINSTANCE.getSpecialization_SpecializationChoicePointSemester();
+
+		/**
+		 * The meta object literal for the '<em><b>Semesters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIALIZATION__SEMESTERS = eINSTANCE.getSpecialization_Semesters();
 
 		/**
 		 * The meta object literal for the '{@link ntnustudies.impl.SemesterImpl <em>Semester</em>}' class.
